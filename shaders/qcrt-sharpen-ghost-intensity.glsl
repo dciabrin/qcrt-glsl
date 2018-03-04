@@ -59,6 +59,7 @@ IN vec2 r1_coord;
 IN vec2 r2_coord;
 
 #define SQRT_3 1.732050808
+#define GAMMA 0.9
 
 void main() {
     vec3 l2_col = tex2D(Texture, l2_coord).rgb;
@@ -76,8 +77,8 @@ void main() {
 
     // "luminous intensity" of the pixel, normalized
     float intensity = sqrt(dot(col, col)) / SQRT_3;
-
-    FragColor = vec4(col, intensity);
+    vec3 gamma_col = pow(col, vec3(GAMMA));
+    FragColor = vec4(gamma_col, intensity);
 }
 
 #endif
