@@ -22,7 +22,7 @@ void main() {
     gl_Position = MVPMatrix * vec4(VertexCoord, 0.0, 1.0);
     v_tex_coord = TexCoord;
     // ensure varying grid pos has only an integer part
-    if (TexCoord.x < 0.5) {
+    if (TexCoord.x < 0.01) {
         v_grid_pos = 0.0;
     } else {
         v_grid_pos = OutputSize.x;

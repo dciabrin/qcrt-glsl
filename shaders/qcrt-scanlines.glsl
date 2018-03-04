@@ -23,7 +23,7 @@ void main() {
     // Screen and texture's initial position
     gl_Position = MVPMatrix * vec4(VertexCoord, 0.0, 1.0);
     cu_coord = TexCoord;
-    if (TexCoord.y < 0.2) {
+    if (TexCoord.y < 0.01) {
         v_scanline_pos = 0.0;
     } else {
         v_scanline_pos = InputSize.y;
