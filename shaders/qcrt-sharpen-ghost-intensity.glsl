@@ -45,7 +45,9 @@ out vec4 FragColor;
 #define tex2D texture2D
 #endif
 
+#ifdef GL_ES
 precision highp float;
+#endif
 
 uniform sampler2D Texture;
 uniform vec2 TextureSize;
